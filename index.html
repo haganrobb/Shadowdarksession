@@ -4,9 +4,12 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Simple Dungeon Page</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel&display=swap" rel="stylesheet">
 <style>
     body {
-        font-family: 'Arial', sans-serif;
+        font-family: 'Cinzel', serif;
         background-image: url('https://raw.githubusercontent.com/haganrobb/Shadowdarksession/856275f0d565c2d0707f5b4ceb906f32b39fe1aa/Dungeon%20Wall.jpg');
         background-size: cover;
         background-position: center;
@@ -14,6 +17,7 @@
         display: flex;
         justify-content: center;
         align-items: center;
+        flex-direction: column;
         height: 100vh;
         margin: 0;
         padding: 1rem;
@@ -23,13 +27,36 @@
     p {
         font-size: 2rem;
         text-shadow: 1px 1px 5px #000;
+        display: none;
+    }
+
+    button {
+        font-family: 'Cinzel', serif;
+        font-size: 1.5rem;
+        padding: 10px 20px;
+        border: 2px solid #e0e0e0;
+        background-color: rgba(0, 0, 0, 0.6);
+        color: #e0e0e0;
+        cursor: pointer;
+        text-shadow: 1px 1px 5px #000;
+    }
+
+    button:hover {
+        background-color: rgba(0, 0, 0, 0.8);
     }
 </style>
+<script>
+    function onButtonClick() {
+        document.getElementById('hiddenText').style.display = 'block';
+        document.getElementById('audio').play();
+    }
+</script>
 </head>
 <body>
-    <p>
+    <button onclick="onButtonClick()">Enter the Dungeon</button>
+    <p id="hiddenText">
         Welcome to the ominous dungeon. Brave adventurer, beware of the lurking dangers and seek the treasures that lie deep within.
     </p>
-    <audio src="https://raw.githubusercontent.com/haganrobb/Shadowdarksession/856275f0d565c2d0707f5b4ceb906f32b39fe1aa/Dungeon%20Sounds.mp3" autoplay loop hidden></audio>
+    <audio id="audio" src="https://raw.githubusercontent.com/haganrobb/Shadowdarksession/856275f0d565c2d0707f5b4ceb906f32b39fe1aa/Dungeon%20Sounds.mp3" loop hidden></audio>
 </body>
 </html>
