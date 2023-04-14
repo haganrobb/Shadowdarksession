@@ -20,14 +20,15 @@
         flex-direction: column;
         height: 100vh;
         margin: 0;
-        padding: 1rem;
+        padding: 2rem;
         text-align: center;
     }
 
     p {
         font-size: 2rem;
         text-shadow: 1px 1px 5px #000;
-        display: none;
+        opacity: 0;
+        transition: opacity 1s;
     }
 
     button {
@@ -39,21 +40,36 @@
         color: #e0e0e0;
         cursor: pointer;
         text-shadow: 1px 1px 5px #000;
+        opacity: 0;
+        transition: opacity 1s;
     }
 
     button:hover {
         background-color: rgba(0, 0, 0, 0.8);
     }
+
+    .visible {
+        opacity: 1 !important;
+    }
+
+    .hidden {
+        opacity: 0 !important;
+    }
 </style>
 <script>
     function onButtonClick() {
-        document.getElementById('hiddenText').style.display = 'block';
+        document.getElementById('enterButton').classList.add('hidden');
+        document.getElementById('hiddenText').classList.add('visible');
         document.getElementById('audio').play();
+    }
+
+    window.onload = function() {
+        document.getElementById('enterButton').classList.add('visible');
     }
 </script>
 </head>
 <body>
-    <button onclick="onButtonClick()">Enter the Dungeon</button>
+    <button id="enterButton" onclick="onButtonClick()">Enter the Dungeon</button>
     <p id="hiddenText">
         Welcome to the ominous dungeon. Brave adventurer, beware of the lurking dangers and seek the treasures that lie deep within.
     </p>
