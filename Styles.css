@@ -1,0 +1,7 @@
+.scrollable-box {
+  width: 300px;
+  height: 200px;
+  overflow-y: scroll;
+  border: 1px solid #000;
+  padding: 10px;
+}
