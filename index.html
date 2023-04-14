@@ -14,19 +14,27 @@
         background-size: cover;
         background-position: center;
         color: #e0e0e0;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
         height: 100vh;
         margin: 0;
         padding: 1rem;
+        position: relative;
+    }
+
+    .button-container, .text-container {
+	position: relative;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -70%);
         text-align: center;
+    }
+
+    .button-container {
+        z-index: 1;
     }
 
     p {
         font-size: 1rem;
-        padding: 10px, 10px;
+        padding: 1px, 10px;
         text-shadow: 1px 1px 5px #000;
         opacity: 0;
         transition: opacity 5s;
@@ -34,7 +42,7 @@
 
     button {
         font-family: 'Cinzel', serif;
-        font-size: 1.5rem;
+        font-size: 2rem;
         padding: 10px 20px;
         border: 2px solid #e0e0e0;
         background-color: rgba(0, 0, 0, 0.6);
@@ -70,19 +78,20 @@
 </script>
 </head>
 <body>
-    <button id="enterButton" onclick="onButtonClick()">Enter the Dungeon</button> 
-    <p id="hiddenText">
-     "Greetings, brave adventurers, <br><br>
+    <div class="button-container">
+        <button id="enterButton" onclick="onButtonClick()">Enter the Dungeon</button> 
+    </div>
+    <div class="text-container">
+        <p id="hiddenText">
+            Greetings, brave adventurers, <br><br>
 
-I go by the name Realmwalker, a title I've earned through countless journeys across dimensions and the pursuit of ancient secrets. My true name shall remain concealed, for I have made both allies and enemies in my travels, and my identity must be guarded. I have discovered a dungeon hidden deep within the Shadowdark realm, a place teeming with great power and long-forgotten knowledge. However, the dangers within are too great for one person to face alone.
-
-I have chosen you to join me on this perilous expedition into the dungeon. Your skills and bravery have caught my attention, and together, we will navigate the treacherous maze of riddles, traps, and fearsome enemies that await us, unveiling the secrets and power contained within.
+I am known as The Realmwalker, for I have journeyed countlessly across dimensions and the pursuit of ancient secrets. I have discovered a dungeon hidden deep within the Shadowdark realm, a place teeming with great power and long-forgotten knowledge. However, the dangers within are too great for one person to face alone. I have chosen you to join me on this perilous expedition into the dungeon. Your skills and bravery have caught my attention, and together, we will navigate the treacherous maze of riddles, traps, and fearsome enemies that await us, unveiling the secrets and power contained within.
 
 I humbly request your presence at [specific physical location] on [specific day] at [specific time] to embark on this daring journey. Prepare yourselves, for the path that lies ahead is filled with darkness and danger. But with courage, cunning, and collaboration, we shall prevail.
 <br><br>
-May the shadows guide you,
-The so-called Realmwalker"
+May the shadows guide you...
         </p>
-    <audio id="audio" src="https://raw.githubusercontent.com/haganrobb/Shadowdarksession/856275f0d565c2d0707f5b4ceb906f32b39fe1aa/Dungeon%20Sounds.mp3" loop hidden></audio>
+    </div>
+  <audio id="audio" src="https://raw.githubusercontent.com/haganrobb/Shadowdarksession/856275f0d565c2d0707f5b4ceb906f32b39fe1aa/Dungeon%20Sounds.mp3" loop hidden></audio>
 </body>
 </html>
